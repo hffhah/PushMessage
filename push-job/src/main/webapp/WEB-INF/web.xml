@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>InitLog4jServlet</servlet-name>
+		<servlet-class>com.ind.sap.service.servlet.InitLog4jServlet</servlet-class>
+		<init-param>
+			<param-name>log4j-properties-location</param-name>
+			<param-value>/WEB-INF/classes/log4j.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>StartJobServlet</servlet-name>
+		<servlet-class>com.ind.sap.service.servlet.StartJobServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StartJobServlet</servlet-name>
+		<url-pattern>/startJob</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StopJobServlet</servlet-name>
+		<servlet-class>com.ind.sap.service.servlet.StopJobServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StopJobServlet</servlet-name>
+		<url-pattern>/stopJob</url-pattern>
+	</servlet-mapping>
+</web-app>
